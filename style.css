@@ -1,0 +1,1196 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #1f1a25;
+}
+
+.content {
+  margin: 40px;
+  text-align: center;
+}
+
+.br {
+  margin-bottom: 60px;
+}
+
+/* contenedor para navbar*/
+.container {
+  background-color: rgba(128, 128, 128, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* flex-direction: row; */
+  /* padding: 1em; */
+  /* text-align: center; */
+}
+
+/* Estilos basicos de los botones */
+.btn {
+  /* font: inherit; */
+  /* line-height: 1; */
+  border: var(--brdr);
+  margin: 0.5em;
+  cursor: pointer;
+  background-color: var(--bgc);
+  padding: var(--pdng);
+  color: var(--clr);
+
+  font-size: 16px;
+  max-width: var(--max);
+  width: var(--wdth);
+}
+.btn:hover {
+  border-color: var(--hoverBrdr);
+  background-color: var(--hoverBgc);
+  color: var(--hoverClr);
+}
+
+
+      /* ----- Lineas horizontales ----- */
+/* Estilos basicos del bototn */
+/* .btn-line {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    max-width: 160px;
+    width: 100%;
+} */
+/* color y distancia de las lineas */
+.line {
+  --max: 110px;
+  --wdth: 100%;
+  --clr: #fff;
+  padding: 0;
+  cursor: pointer;
+  line-height: 45px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+/* color y tansicion de letra */
+.line:hover,
+.line:active{
+  letter-spacing: 5px;
+  --hoverClr: red;
+}
+/* grosor de letra */
+.line:after,
+.line:before {
+  border: 1px solid rgba(255, 255, 255, 0);
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  transition: all 280ms ease-in-out;
+  width: 0px;
+}
+/* ancho y color de la linea */
+.line:hover:after,
+.line:hover:before {
+  border-color: red;
+  width: 90px;
+}
+
+
+      /* ----- Flee ----- */
+/* Estilos basicos del bototn */
+/* .btn-flee {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    max-width: 120px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 45px;
+    text-transform: uppercase;
+} */
+/* borde desplazante */
+.flee {
+  --clr: #fff;
+  text-transform: uppercase;
+  --max: 120px;
+  --pdng: 1em 2em;
+
+  /* box-shadow: inset 0 0 20px rgba(255, 255, 255, 0); */
+  outline: 1.5px solid red;
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+/* sobmra interior y exterior */
+.flee:hover,
+.flee:active {
+  /* border: 1px solid transparent; */
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #1900ff;
+}
+
+
+      /* ----- Mask ----- */
+/* contenedor del boton */
+.btn-cont {
+  /* margin: auto; */
+  /* background-color: blue; */
+  /* border: 1px solid #000; */
+  position: relative;
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+
+/* texto interno */
+.mask {
+  position: absolute;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 17px;
+}
+
+/* cobertura, animacion, color y texto externo */
+.btn-cont button {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: #ff0000;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+
+  /* -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png"); */
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  /* -webkit-mask-size: 2300% 100%; */
+  mask-size: 2300% 100%;
+  /* -webkit-animation: ani2 0.7s steps(22) forwards; */
+  animation: ani2 0.7s steps(22) forwards;
+}
+/* animacion de regreso */
+.btn-cont button:hover,
+.btn-cont button:active {
+  /* -webkit-animation: ani 0.7s steps(22) forwards; */
+  animation: ani 0.7s steps(22) forwards;
+}
+/* @-webkit-keyframes ani */
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+/* @-webkit-keyframes ani2 */
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+
+      /* ----- Rise ------ */
+.raise {
+  --clr: #ffa260;
+  --hoverBrdr: #ffd460;
+  --pdng: 1em 2em;
+  --brdr: 2px solid;
+  transition: 0.25s;
+}
+.raise:hover,
+.raise:active {
+  --hoverClr: #fff;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hoverBrdr);
+  transform: translateY(-0.25em);
+}
+
+
+      /* ----- Offset ----- */
+.offset {
+  box-shadow: 0.3em 0.3em 0 0 var(--clr), inset 0.3em 0.3em 0 0 var(--clr);
+  --clr: #19bc8b;
+  --hoverBrdr: #3719bc;
+  --pdng: 1em 2em;
+  --brdr: 2px solid;
+  transition: 0.25s;
+}
+.offset:hover,
+.offset:active {
+  --hoverClr: #fff;
+  box-shadow: 0 0 0 0 var(--hoverBrdr), inset 6em 3.5em 0 0 var(--hoverBrdr);
+}
+
+
+      /* ----- Pulse ----- */
+.pulse{
+  --brdr: #ef6eae 2px solid;
+  --pdng: 1em 2em;
+  --clr: #ef6eae;
+  --hoverBrdr: #ff0251;
+  --hoverClr: #ff0251;
+}
+.pulse:hover,
+.pulse:focus {
+  animation: flash 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+@keyframes flash {
+  0% { box-shadow: 0 0 0 0 #ff0251; }
+}
+
+
+      /* ----- Blue Buttons ----- */
+/* SLIDE FROM LEFT */
+.left {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.left::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+  /* padding: 0.85em 0.75em; */
+  /* display: block; */
+  transition: all 0.35s;
+
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+}
+.left:hover::after {
+  right: 0;
+  /* left: 0;
+    top: 0;
+    bottom: 0; */
+  /* transition: all 0.35s; */
+}
+
+/* SLIDE FROM RIGHT */
+.right {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.right::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+}
+.right:hover:after {
+  left: 0;
+}
+
+/* SLIDE FROM TOP */
+.top {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.top::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+}
+.top:hover:after {
+  bottom: 0;
+}
+
+/* SLIDE FROM BOTTOM */
+.bottom {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.bottom::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+
+  left: 0;
+  right: 0;
+  top: 100%;
+  bottom: -100%;
+}
+.bottom:hover::after {
+  top: 0;
+}
+
+/* GROW BOX */
+.box {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.box::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+}
+.box:hover::after {
+  transform: scale(1, 1);
+}
+
+/* GROW ELLIPSE */
+.ellipse {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 50%;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.ellipse::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+
+  border-radius: 50%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+  transition: all 0.5s ease;
+}
+.ellipse:hover::after {
+  transform: scale(1, 1);
+  transition: all 1s ease;
+}
+
+/* GROW SKEW ->*/
+.forward {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.forward::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+.forward:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+/* GROW SKEW <- */
+.backward {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.backward::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+.backward:hover::after {
+  transform: skewX(45deg) scale(1, 1);
+}
+
+/* GROW SPIN */
+.spin {
+  --bgc: #3498db;
+  --clr: #fff;
+  --brdr: 0.25rem solid #3498db;
+  --pdng: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  --hoverClr: #3498db;
+  --hoverBgc: #3498db;
+}
+.spin::after {
+  content: "";
+  background: #f1ecec;
+  position: absolute;
+  z-index: -1;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0) rotate(-180deg);
+  transition: all 0.3s ease;
+}
+.spin:hover::after {
+  transform: scale(1, 1) rotate(0deg);
+}
+
+
+      /* ----- Line fill butons ----- */
+.cont {
+  --def: #a3c496;
+  --inv: #fff;
+}
+.cont button {
+  border: none;
+  background: none;
+  /* padding-right: 3.1rem; */
+  /* letter-spacing: 1px; */
+  /* user-select: none; */
+  margin: 10px;
+  position: relative;
+  padding: 15px;
+  font-size: 1.4rem;
+  color: var(--inv);
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+}
+.cont button:before,
+.cont button:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+.cont button:hover {
+  color: var(--def);
+  transition-delay: 0.5s;
+}
+.cont button:hover:before {
+  transition-delay: 0s;
+}
+.cont button:hover:after {
+  background: var(--inv);
+  transition-delay: 0.35s;
+}
+
+/* From Top */
+.from-top:before,
+.from-top:after {
+  left: 0;
+  height: 0;
+  width: 99%;
+}
+.from-top:before {
+  bottom: 0;
+  border: 1px solid var(--inv);
+  border-top: 0;
+  border-bottom: 0;
+}
+.from-top:after {
+  top: 0;
+  height: 0;
+  width: 100%;
+}
+.from-top:hover:before,
+.from-top:hover:after {
+  height: 100%;
+}
+
+/* From Left */
+.from-left:before,
+.from-left:after {
+  top: 0;
+  width: 0;
+  height: 98%;
+}
+.from-left:before {
+  right: 0;
+  border: 1px solid var(--inv);
+  border-left: 0;
+  border-right: 0;
+}
+.from-left:after {
+  left: 0;
+  height: 100%;
+}
+.from-left:hover:before,
+.from-left:hover:after {
+  width: 100%;
+}
+
+/* From Right */
+.from-right:before,
+.from-right:after {
+  top: 0;
+  width: 0;
+  height: 98%;
+}
+.from-right:before {
+  left: 0;
+  border: 1px solid var(--inv);
+  border-left: 0;
+  border-right: 0;
+}
+.from-right:after {
+  right: 0;
+  height: 100%;
+}
+.from-right:hover:before,
+.from-right:hover:after {
+  width: 100%;
+}
+
+/* From center */
+.from-center:before {
+  top: 0;
+  left: 50%;
+  height: 98%;
+  width: 0;
+  border: 1px solid var(--inv);
+  border-left: 0;
+  border-right: 0;
+}
+.from-center:after {
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background: var(--inv);
+}
+.from-center:hover:before {
+  left: 0;
+  width: 100%;
+}
+.from-center:hover:after {
+  top: 0;
+  height: 100%;
+}
+
+/* From Bottom */
+.from-bottom:before,
+.from-bottom:after {
+  left: 0;
+  height: 0;
+  width: 99.8%;
+}
+.from-bottom:before {
+  top: 0;
+  border: 1px solid var(--inv);
+  border-top: 0;
+  border-bottom: 0;
+}
+.from-bottom:after {
+  bottom: 0;
+  height: 0;
+  width: 100%;
+}
+.from-bottom:hover:before,
+.from-bottom:hover:after {
+  height: 100%;
+}
+
+
+      /* ----- Middle Butons ----- */
+/* Estilos basicos del buton */
+.middle {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 14px 60px;
+
+  margin: 0px 10px;
+  border: 2px solid #ff7675;
+  color: white;
+  font-size: 14px;
+  font-family: "montserrat";
+  transition: 1s all ease;
+  
+}
+.middle::before {
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.middle:hover{
+  color: black;
+}
+
+/* Vertical */
+.middle-vertical::before {
+  width: 0%;
+  height: 100%;
+}
+.middle-vertical:hover::before {
+  width: 100%;
+}
+
+/* Horizontal */
+.middle-horizontal::before {
+  width: 100%;
+  height: 0%;
+}
+.middle-horizontal:hover::before {
+  height: 100%;
+}
+
+/* 45 Grados */
+.middle45{
+  overflow: hidden;
+}
+.middle45::before {
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.middle45:hover::before {
+  height: 380%;
+}
+
+/* -45 Grados */
+.middle-45{
+  overflow: hidden;
+}
+.middle-45::before {
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.middle-45:hover::before {
+  height: 380%;
+}
+
+
+      /* ----- Squishy ----- */
+/* Estilos basicos del boton */
+.btn-tech {
+  font-size: 1.875rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+
+  transition: all 250ms;
+  position: relative;
+}
+
+/* Colores y sombra */
+.squishy {
+  background-color: rgb(5 150 105);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), 0 2px 0 0 #059669,
+    0 4px 0 0 #047857, 0 6px 0 0 #065f46, 0 8px 0 0 #064e3b,
+    0 8px 16px 0 rgba(5, 150, 105, 0.5);
+  overflow: hidden;
+}
+/* luz de izquierda a deracha */
+.squishy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* efecto de precionar boton */
+.squishy:hover,
+.squishy:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), 0 1px 0 0 #059669,
+    0 2px 0 0 #047857, 0 3px 0 0 #065f46, 0 4px 0 0 #064e3b,
+    0 4px 8px 0 rgba(5, 150, 105, 0.5);
+}
+.squishy:hover::before {
+  animation: none;
+}
+
+
+      /* ----- Draw Border ----- */
+/* Esrtlos basicos del boton */
+.btn-draw {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: 700 1.2rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  /* line-height: 1.5; */
+  /* letter-spacing: 0.05rem; */
+}
+
+/* Bordes del boton */
+.draw {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833s;
+  position: relative;
+}
+/* creacion de los bordes */
+.draw::before,
+.draw::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+/* borde izquierdo e inferior */
+.draw::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+/* borde superior y derecho */
+.draw::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+/* letra */
+.draw:hover {
+  color: #ffe593;
+}
+/* colo y velocidad del borde inferior y derecho  */
+.draw:hover::before,
+.draw:hover::after {
+  border-color: #ffe593;
+  transition: border-color 0s, width 0.3s, height 0.3s;
+  width: 100%;
+  height: 100%;
+}
+/* velocidad borde izquierdo */
+.draw:hover::before {
+  transition-delay: 0s, 0s, 0.3s;
+}
+/* velocidad borde superior */
+.draw:hover::after {
+  transition-delay: 0s, 0.3s, 0s;
+}
+
+
+      /* ----- Flip ----- */
+/* Estilos basicos del boton  */
+.btn-flip {
+  /* opacity: 1; */
+  /* outline: 0; */
+  /* color: #fff; */
+  /* text-align: center; */
+  /* letter-spacing: 1px; */
+  line-height: 40px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+}
+.btn-flip:hover::after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover::before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+/* color y tamaño del back */
+.btn-flip::after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #323237;
+  /* display: block; */
+  transition: 0.5s;
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+/* color y tamaño del front */
+.btn-flip::before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  transition: 0.5s;
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+
+      /* ----- Zoom ----- */
+/* Estilos base */
+.zoom {
+  text-transform: uppercase;
+  --pdng: 1em 2em;
+  --clr: #2c86bb;
+  --hoverClr: #fff;
+  transition: all 0.5s;
+  position: relative;
+}
+/* Color de fondo del boton */
+.zoom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.zoom:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+/* Borde */
+.zoom::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+.zoom:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+
+      /* ----- Sahadow ----- */
+/* Estilos base */
+.shadow {
+  --pdng: 15px 40px;
+  --clr: #777;
+  --bgc: #fff;
+  --hoverClr: #000;
+  --hoverBgc: #fff;
+
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+/* Sombra primaria */
+.shadow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgb(38, 0, 255);
+}
+/* Sombra secundaria */
+.shadow:active {
+  box-shadow: 0 5px 10px rgb(228, 11, 11);
+}
+/* Boton Desaparecido color y tiempo*/
+.shadow::after {
+  content: "";
+  /* display: inline-block; */
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background-color: #fff;
+}
+.shadow:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+
+      /* ----- Blink ----- */
+/* Estilos basicos del boton */
+.blink {
+  width: 250px;
+  line-height: 46px;
+  border-radius: 50px;
+  border: 3px solid seagreen;
+  color: seagreen;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  text-transform: uppercase;
+  transition: all 0.35s;
+}
+
+/* Color de la pestaña */
+.blink:before,
+.blink:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: seagreen;
+  z-index: -1;
+  transition: all 0.35s;
+}
+.blink:before {
+  opacity: 0.5;
+}
+.blink:after {
+  transition-delay: 0.2s;
+}
+/* Color de la letra en hover */
+.blink:hover {
+  color: #fff;
+}
+.blink:hover:before,
+.blink:hover:after {
+  top: 0;
+}
+
+
+      /* ----- Neon ------ */
+.neon {
+  --max: 170px;
+  --wdth: 100%;
+  --pdng: 20px;
+  --brdr: 3px solid #00d7c3;
+  --clr: #fff;
+  --hoverClr: #00d7c3;
+  border-radius: 50px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.neon:hover,
+.neon:active {
+  box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+  border: 3px solid #00d7c3;
+}
+
+
+      /* ----- Throb ----- */
+.throb {
+  /* background-color: transparent; */
+  --brdr: 3px solid #ff0251;
+  --clr: #ff0251;
+  --max: 170px;
+  --wdth: 100%;
+  --pdng: 20px;
+  --hoverClr: #ff0251;
+  transition: .3s;
+  animation: throb 1s infinite;
+}
+.throb:hover,
+.throb:active {
+  animation-play-state: paused;
+}
+@keyframes throb {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  --c: goldenrod;
+  color: var(--c);
+  font-size: 16px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+nav ul li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+nav ul li:hover {
+  color: black;
+}
+
+nav ul li:hover span {
+  transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+  --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+  --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+  --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+  --n: 4;
+}
