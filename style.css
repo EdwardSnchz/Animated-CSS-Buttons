@@ -775,6 +775,42 @@ body {
 }
 
 
+/* ----- Middle Fill out----- */
+.middleFill {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  background-color: #246eb9;
+  padding: 15px 10px;
+  width: 10%;
+  color: #000000;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 0;
+}
+.middleFill::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #bb1919;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.middleFill:hover {
+  color: rgb(255, 255, 255);
+}
+.out::before {
+  width: 0%;
+  height: 101%;
+}
+.out:hover::before {
+  width: 100%;
+}
+
+
       /* ----- Squishy ----- */
 /* Estilos basicos del boton */
 .btn-tech {
@@ -1043,6 +1079,7 @@ body {
   border-radius: 50px;
   border: 3px solid seagreen;
   color: seagreen;
+  cursor: pointer;
   font-size: 20px;
   position: relative;
   overflow: hidden;
@@ -1108,6 +1145,7 @@ body {
   --wdth: 100%;
   --pdng: 20px;
   --hoverClr: #ff0251;
+  border-radius: 2px;
   transition: .3s;
   animation: throb 1s infinite;
 }
@@ -1128,16 +1166,13 @@ body {
 }
 
 
-
-
-
-nav ul {
+      /* ----- Bubbles ----- */
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
-nav ul li {
+li {
   --c: goldenrod;
   color: var(--c);
   font-size: 16px;
@@ -1149,16 +1184,13 @@ nav ul li {
   font-weight: bold;
   font-family: sans-serif;
   letter-spacing: 0.1em;
-  text-align: center;
-  line-height: 3em;
+  line-height: 2.5em;
   position: relative;
   overflow: hidden;
   z-index: 1;
   transition: 0.5s;
-  margin: 1em;
 }
-
-nav ul li span {
+li span {
   position: absolute;
   width: 25%;
   height: 100%;
@@ -1170,27 +1202,21 @@ nav ul li span {
   transition-delay: calc((var(--n) - 1) * 0.1s);
   z-index: -1;
 }
-
-nav ul li:hover {
+li:hover {
   color: black;
 }
-
-nav ul li:hover span {
+li:hover span {
   transform: translateY(0) scale(2);
 }
-
-nav ul li span:nth-child(1) {
+li span:nth-child(1) {
   --n: 1;
 }
-
-nav ul li span:nth-child(2) {
+li span:nth-child(2) {
   --n: 2;
 }
-
-nav ul li span:nth-child(3) {
+li span:nth-child(3) {
   --n: 3;
 }
-
-nav ul li span:nth-child(4) {
+li span:nth-child(4) {
   --n: 4;
 }
